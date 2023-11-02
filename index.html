@@ -3,14 +3,14 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Liu Song’s Pages</title>
+  <title>WebESP</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="description" content="homepage, blog, music and etc.">
   <meta name="author" content="Lsong">
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="dark light">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Liu Song’s Pages">
+  <meta name="apple-mobile-web-app-title" content="WebESP">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="@song940">
@@ -19,6 +19,8 @@
   <link rel="apple-touch-icon" sizes="128x128" type="image/png" href="icon-x128.png">
   <link rel="apple-touch-icon" sizes="512x512" type="image/png" href="icon-x512.png">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+  <script type="module" src="https://lsong.org/scripts/components/progressbar.js"></script>
   <script type="module" src="app.js"></script>
 </head>
 
@@ -27,7 +29,7 @@
     <header class="header">
       <a href="/" class="heading">
         <img src="https://lsong.org/icon.svg" alt="logo" class="logo">
-        <h1><b>Liu Song’s </b>Pages</h1>
+        <h1>WebESP</h1>
       </a>
       <nav class="nav nav-bar">
         <a href="//lsong.org">home</a>
@@ -57,7 +59,36 @@
         </p>
       </section>
 
-      <section id="app"></section>
+      <section id="app">
+
+        <div>
+          <h3>Connect</h3>
+          <label for="baudrate">Baudrate:</label>
+          <select id="baudrate" >
+            <option value="9600">9600</option>
+            <option value="115200" selected >115200</option>
+          </select>
+          <button id="connect">Connect</button>
+        </div>
+      
+        <div>
+          <h3>Flash</h3>
+      
+          <div>
+            <input type="text" name="address" value="0x00">
+            <input type="file" id="upload">
+          </div>
+      
+          <p>
+            <progress-bar value="0"></progress-bar>
+          </p>
+      
+          <p>
+            <button id="flash">Flash</button>
+          </p>
+        </div>
+
+      </section>
 
       <hr />
       <section id="subscribe" class="subscribe">
